@@ -1,15 +1,15 @@
-from rest_framework import status, views
-from django.contrib.auth.models import User
+from rest_framework import views, status
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
-from autenticacao_autorizacao_app import serializers
+from autenticacao_autorizacao_app.serializers import UserSerializers
+from django.contrib.auth.models import User
 
-def CadastroNovoUsuario(views.APIView):
-    #Pesquisar diferença entre pass e ...
-    def post(self, request, format=None):
-        serializer = serializers.CadastroNovoUsuarioSerializer(data=request.data)
+
+class CadastroNovoUsuarioView(views.APIView):
+    def post(self, request):
+        serializer = UserSerializers(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.erros, status=status.HTTP_400_BAD_REQUEST
+            user = User.objects.create_user(**serializer.validated_data)
+            return Response(UserSerializers(user).data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
                         
