@@ -54,18 +54,18 @@ INSTALLED_APPS = [
 
 SIMPLE_JWT = {
     #quanto tempo o token vai durar
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=env.int('ACCESS_TOKEN_LIFETIME')),
     #quanto tempo o refresh token vai durar
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=env.int('REFRESH_TOKEN_LIFETIME')),
     #se o refresh token vai ser rotacionado
-    'ROTATE_REFRESH_TOKENS': False,
+    'ROTATE_REFRESH_TOKENS': env.bool('ROTATE_REFRESH_TOKENS'),
     #algoritmo de criptografia
-    'ALGORITHM': 'HS256',
+    'ALGORITHM': env.str('ALGORITHM'),
     #chave de criptografia
-    'SIGNING_KEY': env('SECRET_KEY'),
+    'SIGNING_KEY': env.str('SIGNING_KEY'),
     #tipos de autenticação, vamos usar apenas o Bearer. Tem que ser uma
     #tupla, por isso a virgula no final
-    'AUTH_HEADER_TYPES': ('Bearer',)
+    'AUTH_HEADER_TYPES': env.tuple('AUTH_HEADER_TYPES')
 }
 
 
@@ -105,7 +105,7 @@ WSGI_APPLICATION = "autentificacao_autorizacao.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": env('DATABASE_DEFAULT_ENGINE'),
         "NAME": env('DATABASE_DEFAULT_NAME'),
         "USER": env('DATABASE_DEFAULT_USER'),
         "PASSWORD": env("DATABASE_DEFAULT_PASSWORD"),
