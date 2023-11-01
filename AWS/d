@@ -1,0 +1,11 @@
+[33mcommit 9eff75e13b53bac186a6d8848418ee64e1ecfee3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Rodrigo Bossini <professorbossini@gmail.com>
+Date:   Tue Sep 19 14:25:48 2023 -0300
+
+    looks good
+
+[33mcommit 0953cef6702d0ccc6d0d84bd5c4b2a58d1369086[m
+Author: Rodrigo Bossini <professorbossini@gmail.com>
+Date:   Mon Sep 18 15:40:01 2023 -0300
+
+    Initialize project using Create React App
