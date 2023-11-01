@@ -5,11 +5,7 @@ import './App.css';
 function App() {
   const [book, setBook] = useState({ LivroID: '', titulo: '', edicao: '', autor: '' });
   const [books, setBooks] = useState([]);
-  const [backendURL, setBackendURL] = useState('https://nlrugjagse.execute-api.us-east-1.amazonaws.com/dev');
-
-  // useEffect(() => {
-  //   obterLivros()
-  // }, []);
+  const [backendURL, setBackendURL] = useState('https://bj8hevuvll.execute-api.us-east-1.amazonaws.com/dev/dev/');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;

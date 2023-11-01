@@ -14,7 +14,7 @@ let filmes = [
         titulo: "Um Sonho de Liberdade",
         sinopse: "Em 1946, Andy Dufresne (Tim Robbins), um jovem e bem sucedido banqueiro, tem a sua vida radicalmente modificada ao ser condenado por um crime que nunca cometeu, o homicídio de sua esposa e do amante dela"
     }
-]
+];
 
 //ponto de acesso para req get teste
 app.get('/filmes', (req, res) => {
@@ -22,7 +22,6 @@ app.get('/filmes', (req, res) => {
 });
 
 app.post('/filmes', (req, res) => {
-
     const titulo = req.body.titulo;
     const sinopse = req.body.sinopse;
     const filme = { titulo: titulo, sinopse: sinopse };
