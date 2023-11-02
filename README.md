@@ -3,8 +3,9 @@
 <h1 align="center">Aulas Mauá</h1>
 <h3 align="center"><img src="https://github.com/alexZ7000/alexZ7000/assets/78627928/5964d8bd-503c-4f54-acfb-2bbd396db76a" alt="Logo da Mauá" width="300"/></h3>
 
-> <p align="center">Repositório para guardar os códigos feitos em sala de aula pelo Instituto Mauá de Tecnologia</p>
-
+> <p>Repositório para guardar os códigos feitos em sala de aula pelo Instituto Mauá de Tecnologia</p>
+> 
+<br>
 
 <h1><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="35"/> AWS</h1>
 <div>
@@ -29,6 +30,7 @@
         </li>
     </ul>
 </div>
+<br>
 
 <h1><img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="25"/> Django</h1>
 <div>
@@ -47,6 +49,7 @@
         </li>
     </ul>
 </div>
+<br>
 
 <h1><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="30"/> JavaScript</h1>
 <div>
@@ -68,6 +71,7 @@
         </li>
     </ul>
 </div>
+<br>
 
 <h1>🤝 Colaborador</h1>
 <table>
