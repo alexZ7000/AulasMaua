@@ -51,7 +51,16 @@
 </div>
 <br>
 
-<h1><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="30"/> JavaScript</h1>
+<h1> <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="30"/> Flutter</h1>
+<div>
+    <ul>
+       <li>
+            Waiting for Something
+        </li>
+    </ul>
+</div>
+<br>
+<h1> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="30"/> JavaScript</h1>
 <div>
     <ul>
        <li>
