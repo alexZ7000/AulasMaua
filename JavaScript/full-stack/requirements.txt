@@ -2,4 +2,8 @@ npm i cors
 npm i express
 npm i axios
 npm i dotenv
+npm i mongodb
+npm i mongoose@7.0.0
+npm i mongoose-unique-validator
+npm i bcrypt
 npm start
