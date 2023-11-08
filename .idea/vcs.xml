@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AWS/20232_maua_ecm968_livros_l2/frontend_livros_ecm967/projeto_feedbacks_2023/pessoal_react_aws_livros" vcs="Git" />
   </component>
 </project>
