@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import '../blocs/bloc.dart';
 
 class LoginTela extends StatelessWidget {
   @override
@@ -12,9 +16,9 @@ class LoginTela extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Container(
-              margin: EdgeInsets.only(top: 12.0),
-              child: submitButton(),
+              child: Container(
+                margin: EdgeInsets.only(top: 12.0),
+                child: submitButton(),
             )),
           ],
         )
@@ -23,10 +27,22 @@ class LoginTela extends StatelessWidget {
   }
 
   Widget emailField() {
-    return TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-            hintText: 'seuemail@email.com', labelText: 'Digite seu email'));
+    return StreamBuilder(
+      stream: bloc.email,
+      builder: (context, AsyncSnapshot <String> snapshot){
+        return TextField(
+          onChanged: (valorQuePodeSerQualquerOutroNome){
+            bloc.changeEmail(valorQuePodeSerQualquerOutroNome);
+          },
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            hintText: 'seuemail@email.com', 
+            labelText: 'Digite seu email',
+            errorText: snapshot.hasError ? snapshot.error.toString() : null
+          )
+        );
+      }
+    );
   }
 
   Widget passwordField() {
