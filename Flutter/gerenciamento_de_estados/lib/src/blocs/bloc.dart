@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'validators.dart';
-import 'dart:async';
 
 class Bloc with Validators {
   final _emailStreamController = StreamController<String>();
