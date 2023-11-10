@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,9 +14,9 @@ class LoginTela extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: Container(
-              margin: EdgeInsets.only(top: 12.0),
-              child: submitButton(),
+              child: Container(
+                margin: EdgeInsets.only(top: 12.0),
+                child: submitButton(),
             )),
           ],
         )
@@ -23,11 +25,26 @@ class LoginTela extends StatelessWidget {
   }
 
   Widget emailField() {
-    return TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-            hintText: 'seuemail@email.com', labelText: 'Digite seu email'));
+    return StreamBuilder(
+      stream: bloc.email,
+      builder: (context, AsyncSnapshot <String> snapshot){
+        return TextField(
+          onChanged: (valorQuePodeSerQualquerOutroNome){
+            bloc.changeEmail(valor);
+          },
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            hintText: 'seuemail@email.com', 
+            labelText: 'Digite seu email',
+            errorText: snapshot.hasError ? snapshot.error.toString() : null;
+          )
+        );
+      }
+    );
+
+    
   }
+  //TODO: flutter pub add email_validator
 
   Widget passwordField() {
     return TextField(
