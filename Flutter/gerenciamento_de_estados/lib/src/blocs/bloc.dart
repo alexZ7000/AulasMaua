@@ -13,4 +13,4 @@ class Bloc with Validators {
   Stream<String> get password => _passwordStreamController.stream.transform(validatePassword);
 }
 
-final bloc = Bloc();
+// final bloc = Bloc();
