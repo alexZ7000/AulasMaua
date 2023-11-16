@@ -82,7 +82,7 @@ WSGI_APPLICATION = "filmes_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": env('DATABASE_DEFAULT_ENGINE'),
         "NAME": env('DATABASE_DEFAULT_NAME'),
         "USER": env('DATABASE_DEFAULT_USER'),
         "PASSWORD": env('DATABASE_DEFAULT_PASSWORD'),
