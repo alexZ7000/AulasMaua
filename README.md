@@ -55,7 +55,10 @@
 <div>
     <ul>
        <li>
-            Waiting for Something
+            Validação de login
+        </li>
+        <li>
+            Desenvolvimento usando blocs
         </li>
     </ul>
 </div>
