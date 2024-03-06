@@ -1,63 +1,82 @@
+import java.util.Random;
+
 public class MeuVetor {
-    private int[] v;
+    private double[] v;
     private int ultimaPos;
 
-    protected MeuVetor(int capacidade){
-        v = new int[capacidade];
+    public MeuVetor (int capacidade) {
+        v = new double[capacidade];
         ultimaPos = -1;
     }
-
-    // métodos de acesso (get/set)
-    public int getUltimaPos(){
+    //métodos de acesso
+    public int getUltimaPos (){
         return ultimaPos;
     }
-
-    public int[] getV(){
+    public double[] getV () {
         return v;
     }
-
-    public void setUltimaPos(int pos){
-        if (pos >= 0 && pos < v.length) ultimaPos = pos;
-        else ultimaPos = v.length - 1; //controle de estouro de array
+    //métodos modificadores
+    public void setUltimaPos(int pos) {
+        if (pos >=0 && pos < v.length) {
+            ultimaPos = pos;
+        }
+        else {
+            ultimaPos = v.length - 1;
+        }
     }
-
-    public boolean estaCheio() {
+    public boolean estaCheio () {
         return ultimaPos == v.length - 1;
     }
-
     public boolean estaVazio() {
         return ultimaPos == -1;
     }
-
-    public void adiciona(int e){
-        if (estaCheio()) redimensiona(v.length * 2);
-
+    private void redimensiona (int novaCapacidade) {
+        double[] temp = new double[novaCapacidade];
+        for (int i=0; i<=ultimaPos; i++)
+            temp[i] = v[i];
+        v = temp;
+    }
+    public void adiciona (double e){
+        if (estaCheio()) redimensiona(v.length*2);
         v[++ultimaPos] = e;
     }
-
-    public int remove(){
+    public double remove () {
         if (estaVazio()) return 0;
-        int aux = v[ultimaPos--];
-        if (ultimaPos <= v.length / 4) redimensiona(v.length / 2);
-
+        double aux = v[ultimaPos--];
+        if (v.length>=10 && ultimaPos <= v.length/4) redimensiona(v.length/2);
         return aux;
     }
 
-    private void redimensiona(int novaCapacidade) {
-        int[] temp = new int[novaCapacidade];
-        for (int i = 0; i < ultimaPos; i++) temp[i] = v[i];
-        v = temp;
-    }
-
     @Override
-    public String toString() {
+    public String toString () {
         String s = "";
-        if (estaVazio()) s = s + "esta vaizo";
+        if (estaVazio()) {
+            s = s + "esta vazio";
+        }
         else {
-            for (int i= 0; i <= ultimaPos; i++){
-                s = s + v[i] + " ";
+            for (int i=0; i<=ultimaPos; i++) {
+                s = s + String.format("%.0f ", v[i]);
             }
         }
         return s + "\n";
+    }
+    public void bubbleSort () {
+        for (int i = 1; i < v.length; i++) {
+            for (int j = 0; j < v.length - i; j++) {
+                if (v[j] > v[j+1]) {
+                    double aux = v[j];
+                    v[j] = v[j+1];
+                    v[j+1] = aux;
+                }
+            }
+        }
+    }
+    public void preencheVetor () {
+        Random r = new Random();
+        for (int i=0; i<v.length; i++) {
+            //adiciona(Math.random());
+            //adiciona(r.nextDouble());
+            adiciona(r.nextInt());
+        }
     }
 }
