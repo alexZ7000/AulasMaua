@@ -60,9 +60,11 @@ public class MeuVetor {
         }
         return s + "\n";
     }
-    public void bubbleSort () {
+    public int bubbleSort () {
+        int cont = 0;
         for (int i = 1; i < v.length; i++) {
             for (int j = 0; j < v.length - i; j++) {
+                cont++;
                 if (v[j] > v[j+1]) {
                     double aux = v[j];
                     v[j] = v[j+1];
@@ -70,13 +72,12 @@ public class MeuVetor {
                 }
             }
         }
+        return cont;
     }
     public void preencheVetor () {
         Random r = new Random();
         for (int i=0; i<v.length; i++) {
-            //adiciona(Math.random());
-            //adiciona(r.nextDouble());
-            adiciona(r.nextInt());
+            adiciona(r.nextInt(v.length * 10));
         }
     }
 }
