@@ -1,3 +1,4 @@
+package meuVetor;
 public class Teste1 {
     public static void main(String[] args){
         MeuVetor v1 = new MeuVetor(10); //capacidade máxima do meu Array

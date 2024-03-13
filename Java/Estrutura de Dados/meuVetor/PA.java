@@ -1,3 +1,4 @@
+package meuVetor;
 import java.util.Scanner;
 
 public class PA {
