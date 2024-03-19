@@ -1,3 +1,4 @@
+package meuVetor;
 import java.util.Random;
 
 public class MeuVetor {
@@ -79,5 +80,36 @@ public class MeuVetor {
         for (int i=0; i<v.length; i++) {
             adiciona(r.nextInt(v.length * 10));
         }
+    }
+
+    public Retorno buscaSimples(final double elemento) {
+        Retorno r = new Retorno();
+        if (estaVazio()) return r;
+        for (int i = 0; i <= ultimaPos; i++){
+            r.incrementaContador();
+            if (v[i] == elemento){
+                r.setAchou(true);
+                return r;
+            }
+        }
+        return r;
+    }
+
+    public Retorno buscaBinaria(final double elemento) {
+        Retorno r = new Retorno();
+        if (estaVazio()) return r;
+        int inicio = 0;
+        int fim = ultimaPos;
+        while (inicio <= fim) {
+            r.incrementaContador(2);
+            final int meio = (inicio + fim) / 2;
+            if (elemento == v[meio]) {
+                r.setAchou(true);
+                return r;
+            }
+            else if (elemento > v[meio]) inicio = meio + 1;
+            else fim = meio - 1;
+        }
+        return r;
     }
 }
