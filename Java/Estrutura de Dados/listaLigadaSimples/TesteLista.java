@@ -23,7 +23,7 @@ public class TesteLista {
     }
 
     //DIVERTIMENTOS
-    //1. implementar o removeFim para lista
+    //1. implementar o removeFim para lista ok
     //2. implementar o removeFim para listaComUltimo
     //3. implementar um teste para listaComUltimo
 }
