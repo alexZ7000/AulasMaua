@@ -5,6 +5,7 @@ public class TesteDupla {
     public static void main(String[] args) {
         Random random = new Random();
         ListaDupla lDupla = new ListaDupla();
+        int i = 0;
         do {
             if (random.nextBoolean()) { //inserção
                 if (random.nextBoolean()) { //no inicio
@@ -25,6 +26,7 @@ public class TesteDupla {
                 }
             }
             System.out.println(lDupla);
-        } while (!lDupla.estaVazia());
+            i++;
+        } while (i != 100);
     }
 }

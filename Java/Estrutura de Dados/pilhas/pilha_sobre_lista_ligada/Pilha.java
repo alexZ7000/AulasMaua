@@ -1,3 +1,7 @@
+package pilhas.pilha_sobre_lista_ligada;
+
+import lista_ligada.No;
+
 public class Pilha {
     private No topo;
     //construtor padrão 
@@ -18,17 +22,17 @@ public class Pilha {
     }
     @Override
     public String toString() {
-        String s = "pilha: ";
+        StringBuilder s = new StringBuilder("pilha: ");
         if (estaVazia()) {
-            s += "vazia";
+            s.append("vazia");
         }
         else { 
             No aux = topo;
             while (aux != null) { //percorrer até o final
-                s += aux + "\n";
+                s.append(aux).append("\n");
                 aux = aux.getProximo();
             }
-            s += "//";
+            s.append("//");
         }
         return s + "\n";
     }
