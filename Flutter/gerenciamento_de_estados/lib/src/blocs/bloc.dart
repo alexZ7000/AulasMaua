@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:email_validator/email_validator.dart';
 import 'validators.dart';
 
 class Bloc with Validators {

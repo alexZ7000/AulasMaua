@@ -38,7 +38,7 @@ class LoginTela extends StatelessWidget {
           },
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            hintText: 'seuemail@email.com', 
+            hintText: 'seuemail@email.com',
             labelText: 'Digite seu email',
             errorText: snapshot.hasError ? snapshot.error.toString() : null
           )
@@ -48,9 +48,23 @@ class LoginTela extends StatelessWidget {
   }
 
   Widget passwordField(Bloc bloc) {
-    return TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(hintText: 'Senha', labelText: 'Senha'));
+    return StreamBuilder(
+        stream: bloc.password,
+        builder: (context, AsyncSnapshot <String> snapshot) {
+          return TextField(
+            onChanged: (valor) {
+              bloc.changePassword(valor);
+            },
+            obscureText: true,
+            keyboardType: TextInputType.visiblePassword,
+            decoration: InputDecoration(
+                hintText: "senha",
+                labelText: "Digite senha",
+                errorText: snapshot.hasError ? snapshot.error.toString() : null
+            ),
+          );
+        }
+    );
   }
 
   Widget submitButton(Bloc bloc) {
@@ -61,3 +75,5 @@ class LoginTela extends StatelessWidget {
     );
   }
 }
+
+
